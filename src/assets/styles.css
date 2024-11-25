@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Estilos Gerais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    padding-top: 3rem;
+    overflow: hidden;
+    flex-direction: column; /* Permite que o footer fique no final da página */
+    flex: 1;
+    background-color: #f0f0f0;
+}
+
+html{
+    overflow-x: hidden;
+    height: 100%;
+    
+}
+
+h1{
+    color: #fff; 
+    margin: 1rem 0;
+    font-weight: 700;
+}
+
+
+h2{
+    color: #4E1BC5; 
+    margin: 1rem 0;
+}
+p{
+    color: #fff;
+    margin: 1rem 0;
+}
+
+a {
+    color: #4E1BC5; 
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+
+
+a:hover {
+    color: #3d1e8e; 
+}
+
+/* Estilos Gerais */
+.navbar {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box; 
+}
+
+.navbar .logo img {
+    width: 9rem; 
+    height: auto;
+    overflow: hidden;
+}
+
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+}
+
+.navbar .nav-links a {
+    color: #4E1BC5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 0.5rem;
+    border-radius: 5px;
+    white-space: nowrap; 
+}
+
+.navbar .nav-links a:hover {
+    color: #fff;
+    font-weight: 700;
+    background-color: #4E1BC5;
+}
+.navbar .auth-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.navbar .auth-buttons a {
+    background-color: white;
+    color: #4E1BC5;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    border: 2px solid transparent;
+}
+
+.navbar .auth-buttons a:hover {
+    color: #fff;
+    font-weight: 700;
+    background-color: #3d1e8e;
+    border-color: #4E1BC5;
+}
+
+
+div.middle{
+    padding-bottom: 100px;
+}
+
+.container {
+    width: 100%;
+    height: auto; /* Ajuste a altura para o conteúdo */
+    display: flex;
+    margin-top: 0rem;
+    overflow: hidden;
+    align-items: center;
+    padding: 0 3rem;
+    background: #4E1BC5;
+    box-shadow: 0 8px 8px rgba(0,0,0,0.1);
+}
+
+.content{
+    width: 50%;
+    text-align: left;
+}
+
+.img-home{
+    flex: 1;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    
+
+}
+
+.img-home img{
+    width: 20rem;
+    height: 15rem;
+    
+}
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #4E1BC5;
+    border-radius: 5px;
+}
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+.bottomtext{
+    color:#4E1BC5;
+    font-weight: 500;
+    
+}
+
+.middle{
+    overflow: hidden;
+    width: 65%;
+    padding: 0 3rem;
+}
+
+.services-list, .how-works {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+    display: flex;
+}
+
+.services-list li, .how-works li{
+    background-color: #f0f0f0; 
+    border: 2px solid #4E1BC5; /* Borda colorida para destacar os planos */
+    border-radius: 5px;
+    padding: 1rem; 
+    margin-bottom: 1rem; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+.services-list li:hover, .how-works li:hover {
+    transform: scale(1.02); 
+    background-color: #4E1BC5;
+    color: #fff;
+}
+
+.footer {
+    color: #fff;
+    background-color: #4E1BC5;
+    text-align: left;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 65px;
+    width: 100%;
+    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos na largura total */
+}
+.socialmedia-list {
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+}
+
+.footer a{
+    color: #fff;
+}
+
+.personal-information{
+    list-style: none;
+}
+
+.service-form{
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    background-color: white;
+    padding: 3rem;
+}
+
+
+
+  
+.service-form input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+    margin: 0.6rem;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+  }
+
+.service-form button{
+    border: none;
+    background-color: #4E1BC5;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
+
+.content-list button{
+    border: none;
+    background-color: #4E1BC5;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
+
+.content-list button:hover{
+    background-color: #f0f0f0;
+    color: black;
+}
+  
+  
+/* Estilos Específicos para as Páginas de Novidades, Recursos e Planos */
+.news-list, .resources-list, .plans-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-list li, .resources-list li, .plans-list li, .content-list li {
+    background-color: #f0f0f0;
+    color: black; 
+    border: 2px solid #4E1BC5; 
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    overflow: hidden;
+}
+
+.news-list li:hover, .resources-list li:hover, .plans-list li:hover, .content-list li:hover{
+    background-color: #4E1BC5; /* Cor de fundo branca ao passar o mouse */
+    color: #fff; /* Cor do texto preta ao passar o mouse */
+    border-color: #ddd; /* Borda clara ao passar o mouse */
+    transform: scale(1.02);
+}
+
+.news-list p, .resources-list p, .plans-list p, .content-list p {
+    color: inherit; /* Garante que a cor do parágrafo siga a cor do item da lista */
+    margin: 0.5rem 0; /* Ajusta a margem para melhor espaçamento */
+}
+
+.news-list h3, .resources-list h3, .plans-list h3, .content-list h3  {
+    margin-top: 0;
+    color: inherit; /* Cor do texto para o título seguir o padrão do item da lista */
+}
+
+.news-list a, .resources-list a, .plans-list a, .content-list a {
+    color: inherit; /* Cor do link para seguir a cor do item da lista */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.news-list a:hover, .resources-list a:hover, .plans-list a:hover, .content-list a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+.content-list2{
+    list-style: none;
+    font-size: 15px;
+}
+.editbtton{
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #4E1BC5;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+
+}
+
+
+
+.editbtton:hover{
+    background-color: #f0f0f0;
+    color: black;
+
+}
+.content-list2 p{
+    color: black;
+}
+
+.plans-list .plan .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: inherit; /* Cor do preço para seguir a cor do item da lista */
+    margin: 0.5rem 0; /* Ajusta a margem para melhor espaçamento */
+}
+
+.search-services {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.search-services h2 {
+    color: #4E1BC5;
+    margin-bottom: 1rem;
+}
+
+.search-services form {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-services input[type="text"] {
+    flex: 1;
+    padding: 0.2rem;
+    border: 2px solid #4E1BC5;
+    border-radius: 5px 0 0 5px;
+    font-size: 0.8rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-services input[type="text"]:focus {
+    border-color: #3d1e8e;
+}
+
+.search-services button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #4E1BC5;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.Search-button{
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #4E1BC5;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+    
+}
+
+.Search-button:hover{
+    background-color: white;
+    color: black;
+
+}
+
+.cancelBtton{
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #4E1BC5;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+
+}
+
+.cancelBtton:hover{
+background-color: white;
+color: black;
+
+}
+
+.search-services button:hover {
+    background-color: #3d1e8e;
+}
+
+.profile-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.profile-section h2 {
+    color: #4E1BC5;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.profile-section .form-group {
+    margin-bottom: 1rem;
+}
+
+.profile-section .form-group label {
+    display: block;
+    color: #4E1BC5;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.profile-section .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #4E1BC5;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.profile-section .form-group input:focus {
+    border-color: #3d1e8e;
+}
+
+.profile-section button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #4E1BC5;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profile-section button:hover {
+    background-color: #3d1e8e;
+}
+/* Servi os */
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 1rem;
+    min-width: 400px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.service-table thead tr {
+    background-color: #4E1BC5;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.service-table th,
+.service-table td {
+    padding: 12px 15px;
+}
+
+.service-table tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.service-table tbody tr:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.01);
+}
+
+.service-table tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+}
+
+.service-table tbody tr:last-of-type {
+    border-bottom: 2px solid #4E1BC5;
+}
+
+.service-table tbody tr.active-row {
+    font-weight: bold;
+    color: #4E1BC5;
+}
+
+.availability {
+    font-weight: bold;
+    color: #4E1BC5;
+}
+
+.availability.available {
+    color: green;
+}
+
+.availability.unavailable {
+    color: red;
+}
+
+.sv-provider_list th{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: #3d1e8e;
+    justify-content: center;
+    
+}
+/* Estilos Responsivos */
+
+@media screen and (max-width: 1368px){
+    .services-list, .how-works{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 900px){
+    body{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar .nav-links {
+        display: none; 
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        z-index: 999; 
+    }
+    .img-home img{
+        display: none;
+    }
+    
+    .navbar .nav-links.active {
+        display: flex;
+    }
+    .navbar .nav-links a {
+        color: #4E1BC5;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+        padding: 0.5rem;
+        border-radius: 5px;
+        white-space: nowrap; 
+    }
+
+
+
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1000; /* Certifique-se de que o bot?est?cima de outros elementos */
+    }
+
+    
+    .menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #4E1BC5;
+        border-radius: 5px;
+    }
+}
+    
