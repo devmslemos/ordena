@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+Ordena: Plataforma de Agendamento de Serviços
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Participantes do Projeto
 
-## Available Scripts
+João Pedro Gomes Nogueira
+Matheus Santos Lemos (RA 202202673757)
 
-In the project directory, you can run:
+Visão Geral do Projeto
 
-### `npm start`
+Este projeto tem como objetivo desenvolver uma plataforma online voltada para o agendamento de serviços profissionais. O foco é permitir que prestadores de serviços possam cadastrar seus serviços, e que os clientes possam facilmente visualizar, agendar e usufruir dos serviços disponíveis. A ideia central é criar uma experiência prática e fluida tanto para quem oferece os serviços quanto para quem os contrata.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Estrutura do Site
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+O site é composto por 7 telas interligadas entre si, o que proporciona uma navegação fluida e intuitiva para o usuário. As páginas estão organizadas de forma a facilitar o acesso aos principais recursos, como a visualização dos serviços disponíveis e o agendamento desses serviços.
 
-### `npm test`
+Além disso, o site conta com dois formulários principais:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Formulário de Login – Para que os usuários possam acessar suas contas de maneira segura.
+Formulário de Cadastro – Onde novos usuários podem criar uma conta na plataforma.
+Tecnologias Utilizadas
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-### `npm run build`
+React JS: Para a construção da interface do usuário de forma dinâmica e interativa.
+HTML & CSS: Para estruturar e estilizar as páginas de forma simples e eficiente.
+JavaScript: Para adicionar funcionalidades e interatividade nas páginas.
+CSS Externo: Utilizamos um arquivo de CSS externo para facilitar a organização e a manutenção dos estilos do site.
+Os arquivos do projeto estão bem organizados e divididos em pastas específicas:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+HTML: Contém todos os arquivos de estruturação das páginas.
+CSS: Contém os estilos da plataforma.
+Imagens: Armazena as imagens utilizadas nas páginas.
+Funcionalidades Principais
+A plataforma oferece uma navegação dinâmica, o que significa que a experiência do usuário é suave e sem interrupções. Atualmente, a funcionalidade principal do site é permitir que os usuários possam se cadastrar, fazer login, visualizar serviços e interagir com eles.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Caso o sistema estiver integrado com o back-end, os usuários terão ainda mais funcionalidades:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Criar uma conta: Para acessar o sistema e usufruir de seus benefícios.
+Cadastrar serviços: Prestadores de serviços poderão adicionar seus serviços para que os clientes possam visualizá-los e agendá-los.
+Atualizar serviços: Caso haja alterações nos serviços, o prestador poderá atualizar suas informações.
+Excluir serviços: Caso algum serviço precise ser removido, o prestador poderá apagá-lo da plataforma.
+A navegação e o fluxo de trabalho foram pensados para serem o mais simples e intuitivos possível, oferecendo uma experiência agradável ao usuário.
