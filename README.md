@@ -2,7 +2,7 @@ Ordena: Plataforma de Agendamento de Serviços
 
 Participantes do Projeto
 
-João Pedro Gomes Nogueira
+João Pedro Gomes Nogueira (RA 202212140751)
 
 Matheus Santos Lemos (RA 202202673757)
 
