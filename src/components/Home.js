@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import '../assets/styles.css'; 
 import { Link } from 'react-router-dom';
 import imageHome from "../images/imagem_home.svg"
@@ -6,22 +6,28 @@ import logo from "../images/Logo.svg"
 import instagramIcon from '../images/instagram.svg';
 import youtubeIcon from '../images/youtube.svg';
 
-
 const Home = () => {
+  const [menuActive, setMenuActive] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);  // Alterna o estado do menu (aberto/fechado)
+  };
+
   return (
     <div>
       <nav className="navbar">
         <div className="logo">
-        <Link to="/">
+          <Link to="/">
             <img src={logo} alt="Logo" />
           </Link>
         </div>
-        <div className="menu-toggle" id="menuToggle">
+        <div className="menu-toggle" onClick={toggleMenu}>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </div>
-        <div className="nav-links" id="navLinks">
+        <div className={`nav-links ${menuActive ? 'active' : ''}`}>
+          <Link to="/dashboard">Dashboard</Link>
           <Link to="/news"> Novidades</Link>
           <Link to="/resources"> Recursos</Link>
           <Link to="/plans"> Planos</Link>
@@ -63,14 +69,14 @@ const Home = () => {
           <li><b>Confirmação Instantânea: </b>Receba uma confirmação imediata do seu agendamento.</li>
           <li><b>Aproveite o Serviço: </b>Compareça ao compromisso e desfrute de um atendimento de qualidade.</li>
         </ul>
-        <p class="bottomtext">No Ordena, estamos comprometidos em proporcionar uma experiência de agendamento simples e eficiente, 
-            para que você possa se concentrar no que realmente importa.
-        <br />
-        
-        Experimente agora e descubra como podemos transformar a maneira como você organiza seus compromissos.<br />
-
-        Estamos aqui para ajudar você a economizar tempo e simplificar sua vida.<br />
-        Seja bem-vindo e aproveite tudo o que nossa plataforma tem a oferecer!</p>
+        <p className="bottomtext">
+          No Ordena, estamos comprometidos em proporcionar uma experiência de agendamento simples e eficiente, 
+          para que você possa se concentrar no que realmente importa.
+          <br />
+          Experimente agora e descubra como podemos transformar a maneira como você organiza seus compromissos.<br />
+          Estamos aqui para ajudar você a economizar tempo e simplificar sua vida.<br />
+          Seja bem-vindo e aproveite tudo o que nossa plataforma tem a oferecer!
+        </p>
       </div>
 
       <div className="footer">
@@ -81,10 +87,7 @@ const Home = () => {
           </ul>
         </footer>
       </div>
-      <script src="menu.js" defer></script>
-      <script src="js/script.js"></script>
     </div>
-    
   );
 };
 

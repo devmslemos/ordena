@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../assets/styles.css';
 import logo from '../images/Logo.svg';
 import plansImage from '../images/plans.svg';
@@ -7,20 +7,27 @@ import youtubeIcon from '../images/youtube.svg';
 import { Link } from 'react-router-dom';
 
 const Plans = () => {
+  const [menuActive, setMenuActive] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);  // Alterna o estado do menu (aberto/fechado)
+  };
+
   return (
     <div>
       <nav className="navbar">
         <div className="logo">
-        <Link to="/">
+          <Link to="/">
             <img src={logo} alt="Logo" />
           </Link>
         </div>
-        <div className="menu-toggle" id="menuToggle">
+        <div className="menu-toggle" onClick={toggleMenu}>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </div>
-        <div className="nav-links" id="navLinks">
+        <div className={`nav-links ${menuActive ? 'active' : ''}`}>
+          <Link to="/dashboard">Dashboard</Link>
           <Link to="/news"> Novidades</Link>
           <Link to="/resources"> Recursos</Link>
           <Link to="/plans"> Planos</Link>
@@ -101,7 +108,6 @@ const Plans = () => {
         </footer>
       </div>
       <script src="menu.js" defer></script>
-
     </div>
   );
 };

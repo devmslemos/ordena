@@ -1,12 +1,18 @@
-import React from 'react';
-import '../assets/styles.css'; // Importe o arquivo CSS
+import React, { useState } from 'react';
+import '../assets/styles.css';
 import logo from '../images/Logo.svg';
-import resourcesImage from '../images/resources.svg'; // Certifique-se de ter esta imagem no caminho correto
+import resourcesImage from '../images/resources.svg';
 import instagramIcon from '../images/instagram.svg';
 import youtubeIcon from '../images/youtube.svg';
 import { Link } from 'react-router-dom';
 
 const Resources = () => {
+  const [menuActive, setMenuActive] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuActive(!menuActive); // Alterna o estado do menu (aberto/fechado)
+  };
+
   return (
     <div>
       <nav className="navbar">
@@ -15,12 +21,13 @@ const Resources = () => {
             <img src={logo} alt="Logo" />
           </Link>
         </div>
-        <div className="menu-toggle" id="menuToggle">
+        <div className="menu-toggle" onClick={toggleMenu}>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </div>
-        <div className="nav-links" id="navLinks">
+        <div className={`nav-links ${menuActive ? 'active' : ''}`}>
+          <Link to="/dashboard">Dashboard</Link>
           <Link to="/news"> Novidades</Link>
           <Link to="/resources"> Recursos</Link>
           <Link to="/plans"> Planos</Link>
@@ -83,7 +90,6 @@ const Resources = () => {
         </footer>
       </div>
       <script src="menu.js" defer></script>
-
     </div>
   );
 };

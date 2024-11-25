@@ -15,7 +15,7 @@ const Dashboard = () => {
     price: '',
     duration: '',
   });
-
+  const [menuActive, setMenuActive] = useState(false);
 
   const fetchServicos = useCallback(async (query = '') => {
     try {
@@ -36,16 +36,19 @@ const Dashboard = () => {
     fetchServicos(searchQuery);
   }, [searchQuery, fetchServicos]);
 
- 
+  const toggleMenu = () => {
+    setMenuActive(!menuActive); // Alterna o estado do menu (aberto/fechado)
+  };
+
   const handleCreateService = async (e) => {
     e.preventDefault();
     const { service_name, description, price, duration } = serviceData;
-  
+
     if (!service_name || !description || !price || !duration) {
       alert('Por favor, preencha todos os campos.');
       return;
     }
-  
+
     try {
       const response = await fetch('http://localhost/ordena/servicos/create_services/create_services.php', {
         method: 'POST',
@@ -54,7 +57,7 @@ const Dashboard = () => {
         },
         body: JSON.stringify(serviceData),
       });
-  
+
       const data = await response.json();
       if (data.success) {
         alert('Serviço criado com sucesso!');
@@ -74,17 +77,16 @@ const Dashboard = () => {
       alert('Erro de conexão ao criar serviço.');
     }
   };
-  
 
   const handleUpdateService = async (e) => {
     e.preventDefault();
     const { service_name, description, price, duration } = serviceData;
-  
+
     if (!service_name || !description || !price || !duration) {
       alert('Por favor, preencha todos os campos.');
       return;
     }
-  
+
     try {
       const response = await fetch('http://localhost/ordena/servicos/update_services/update_services.php', {
         method: 'POST',
@@ -93,7 +95,7 @@ const Dashboard = () => {
         },
         body: JSON.stringify(serviceData),
       });
-  
+
       const data = await response.json();
       if (data.success) {
         alert('Serviço atualizado com sucesso!');
@@ -106,8 +108,7 @@ const Dashboard = () => {
       alert('Erro de conexão ao atualizar serviço.');
     }
   };
-  
-  
+
   const handleDeleteService = async (service_id) => {
     if (window.confirm('Tem certeza que deseja deletar este serviço?')) {
       try {
@@ -118,7 +119,7 @@ const Dashboard = () => {
           },
           body: JSON.stringify({ service_id }),
         });
-  
+
         const data = await response.json();
         if (data.success) {
           alert('Serviço deletado com sucesso!');
@@ -132,7 +133,6 @@ const Dashboard = () => {
       }
     }
   };
-  
 
   const handleEditService = (service) => {
     setServiceData({
@@ -145,7 +145,7 @@ const Dashboard = () => {
   };
 
   const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value); 
+    setSearchQuery(e.target.value);
   };
 
   const resetForm = () => {
@@ -157,22 +157,22 @@ const Dashboard = () => {
       duration: '',
     });
   };
+
   return (
     <div>
       <nav className="navbar">
         <div className="logo">
           <Link to="/">
             <img src={logo} alt="Logo" />
-            </Link>
+          </Link>
         </div>
-        <div className="menu-toggle" id="menuToggle">
+        <div className="menu-toggle" onClick={toggleMenu}>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </div>
-        <div className="nav-links" id="navLinks">
-          <Link to="/dashboard">Dashboard</Link>
-          <Link to="/profile">Perfil</Link>
+        <div className={`nav-links ${menuActive ? 'active' : ''}`}>
+          <Link to="/">Home</Link>
         </div>
       </nav>
 
@@ -184,8 +184,9 @@ const Dashboard = () => {
           </p>
         </div>
       </div>
+
       <div className="service-form">
-      <h2>Buscar Serviços:</h2>
+        <h2>Buscar Serviços:</h2>
         <input
           type="text"
           placeholder="Digite o serviço que deseja buscar"
@@ -194,55 +195,53 @@ const Dashboard = () => {
         />
         <h2>{serviceData.service_id ? 'Atualizar Serviço' : 'Criar Novo Serviço'}</h2>
         <form onSubmit={serviceData.service_id ? handleUpdateService : handleCreateService}>
-  <input
-    type="text"
-    name="service_name"
-    value={serviceData.service_name || ''}
-    onChange={(e) => setServiceData({ ...serviceData, service_name: e.target.value })}
-    placeholder="Nome do Serviço"
-    required
-  />
-  <input
-    type="text"
-    name="description"
-    value={serviceData.description || ''}
-    onChange={(e) => setServiceData({ ...serviceData, description: e.target.value })}
-    placeholder="Descrição"
-    required
-  />
-  <input
-    type="number"
-    name="price"
-    value={serviceData.price || ''}
-    onChange={(e) => setServiceData({ ...serviceData, price: e.target.value })}
-    placeholder="Preço"
-    required
-  />
-  <input
-    type="number"
-    name="duration"
-    value={serviceData.duration || ''}
-    onChange={(e) => setServiceData({ ...serviceData, duration: e.target.value })}
-    placeholder="Duração (em minutos)"
-    required
-  />
-  <div className="form-buttons">
-    <button className="submitbutton" type="submit">
-      {serviceData.service_id ? 'Atualizar Serviço' : 'Criar Serviço'}
-    </button>
-    {serviceData.service_id && (
-      <button
-        type="button"
-        className="resetbutton"
-        onClick={resetForm}
-      >
-        Voltar para Criar Serviço
-      </button>
-    )}
-  </div>
-</form>
-
-
+          <input
+            type="text"
+            name="service_name"
+            value={serviceData.service_name || ''}
+            onChange={(e) => setServiceData({ ...serviceData, service_name: e.target.value })}
+            placeholder="Nome do Serviço"
+            required
+          />
+          <input
+            type="text"
+            name="description"
+            value={serviceData.description || ''}
+            onChange={(e) => setServiceData({ ...serviceData, description: e.target.value })}
+            placeholder="Descrição"
+            required
+          />
+          <input
+            type="number"
+            name="price"
+            value={serviceData.price || ''}
+            onChange={(e) => setServiceData({ ...serviceData, price: e.target.value })}
+            placeholder="Preço"
+            required
+          />
+          <input
+            type="number"
+            name="duration"
+            value={serviceData.duration || ''}
+            onChange={(e) => setServiceData({ ...serviceData, duration: e.target.value })}
+            placeholder="Duração (em minutos)"
+            required
+          />
+          <div className="form-buttons">
+            <button className="submitbutton" type="submit">
+              {serviceData.service_id ? 'Atualizar Serviço' : 'Criar Serviço'}
+            </button>
+            {serviceData.service_id && (
+              <button
+                type="button"
+                className="resetbutton"
+                onClick={resetForm}
+              >
+                Voltar para Criar Serviço
+              </button>
+            )}
+          </div>
+        </form>
       </div>
 
       <div className="middle">
@@ -280,7 +279,7 @@ const Dashboard = () => {
           </ul>
         </footer>
       </div>
-    </div>
+      </div>
   );
 };
 
